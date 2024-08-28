@@ -1,0 +1,116 @@
+[
+    {
+        "httpRequest": {
+            "method": "GET",
+            "path": "/api/products/1b2da7cc-b367-4196-8a78-9cfeec21f587"
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "body": {
+                "id": "1b2da7cc-b367-4196-8a78-9cfeec21f587",
+                "name": "Seguro de Vida",
+                "created_at": "2021-07-01T00:00:00Z",
+                "active": true,
+                "offers": [
+                    "adc56d77-348c-4bf0-908f-22d402ee715c",
+                    "bdc56d77-348c-4bf0-908f-22d402ee715c",
+                    "cdc56d77-348c-4bf0-908f-22d402ee715c"
+                ]
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "GET",
+            "path": "/api/offers/adc56d77-348c-4bf0-908f-22d402ee715c"
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "body": {
+                "id": "adc56d77-348c-4bf0-908f-22d402ee715c",
+                "product_id": "1b2da7cc-b367-4196-8a78-9cfeec21f587",
+                "name": "Seguro de Vida Familiar",
+                "created_at": "2021-07-01T00:00:00Z",
+                "active": true,
+                "coverages": {
+                    "Incêndio": 500000.00,
+                    "Desastres naturais": 600000.00,
+                    "Responsabilidade civil": 80000.00,
+                    "Roubo": 100000.00
+                },
+                "assistances": [
+                    "Encanador",
+                    "Eletricista",
+                    "Chaveiro 24h",
+                    "Assistência Funerária"
+                ],
+                "monthly_premium_amount": {
+                    "max_amount": 100.74,
+                    "min_amount": 50.00,
+                    "suggested_amount": 60.25
+                }
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "GET",
+            "path": "/api/products/2b3da7cc-a678-4896-8a78-9cfeec21f589"
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "body": {
+                "id": "2b3da7cc-a678-4896-8a78-9cfeec21f589",
+                "name": "Seguro de Veículo",
+                "created_at": "2021-07-01T00:00:00Z",
+                "active": false,
+                "offers": [
+                    "edc56d77-348c-4bf0-908f-22d402ee718c",
+                    "fdc56d77-348c-4bf0-908f-22d402ee719c"
+                ]
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    },
+    {
+        "httpRequest": {
+            "method": "GET",
+            "path": "/api/offers/edc56d77-348c-4bf0-908f-22d402ee718c"
+        },
+        "httpResponse": {
+            "statusCode": 200,
+            "body": {
+                "id": "edc56d77-348c-4bf0-908f-22d402ee718c",
+                "product_id": "2b3da7cc-a678-4896-8a78-9cfeec21f589",
+                "name": "Seguro de Veículo Compreensivo",
+                "created_at": "2021-07-01T00:00:00Z",
+                "active": true,
+                "coverages": {
+                    "Colisão": 100000.00,
+                    "Roubo": 80000.00,
+                    "Incêndio": 50000.00
+                },
+                "assistances": [
+                    "Guincho",
+                    "Carro Reserva"
+                ],
+                "monthly_premium_amount": {
+                    "max_amount": 200.74,
+                    "min_amount": 120.00,
+                    "suggested_amount": 150.25
+                }
+            },
+            "headers": {
+                "Content-Type": "application/json"
+            }
+        }
+    }
+]

@@ -1,6 +1,36 @@
 version: '3.8'
 
-services:
+services:  
+  insurance-catalog:
+    image: mockserver/mockserver:5.14.0
+    ports:
+      - 1080:1080
+    environment:
+      MOCKSERVER_PROPERTY_FILE: /insurance-catalog/mockserver.properties
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /insurance-catalog/initializerCatalog.json
+    volumes:
+      - type: bind
+        source: ./insurance-catalog
+        target: /insurance-catalog
+
+  # catalog-app:
+  #   build:
+  #     context: insurance-catalog/.
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - '8081:8081'
+  #   environment:
+  #     - SPRING_PROFILES_ACTIVE=dev
+
+  # mockserver:
+  #   image: mockserver/mockserver:5.13.2
+  #   ports:
+  #     - "1080:1080"
+  #   volumes:
+  #     - ./mockserver/mockserver-config:/mockserver/config
+  #   command: >
+  #     -serverPort 1080 -config /mockserver/config/mockserver-config.json
+
   zookeeper:
     image: confluentinc/cp-zookeeper:7.4.0
     environment:

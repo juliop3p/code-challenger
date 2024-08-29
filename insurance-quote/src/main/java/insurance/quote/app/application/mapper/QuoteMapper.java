@@ -1,9 +1,9 @@
-package insurance.quote.app.api.mapper;
+package insurance.quote.app.application.mapper;
 
-import insurance.quote.app.api.dto.CustomerDto;
-import insurance.quote.app.api.dto.QuoteRequestDto;
-import insurance.quote.app.domain.model.Customer;
-import insurance.quote.app.domain.model.Quote;
+import insurance.quote.app.application.dto.CustomerDto;
+import insurance.quote.app.application.dto.QuoteRequestDto;
+import insurance.quote.app.domain.entities.Customer;
+import insurance.quote.app.domain.entities.Quote;
 import insurance.quote.app.utils.CoverageHelper;
 import org.springframework.stereotype.Component;
 

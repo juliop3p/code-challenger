@@ -1,4 +1,4 @@
-package insurance.quote.app.api.dto;
+package insurance.quote.app.application.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

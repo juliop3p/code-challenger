@@ -1,4 +1,4 @@
-package insurance.quote.app.api.config;
+package insurance.quote.app.application.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
 package insurance.quote.app.utils;
 
-import insurance.quote.app.domain.model.Coverage;
+import insurance.quote.app.domain.entities.Coverage;
 
 import java.util.List;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package insurance.quote.app.api.config;
+package insurance.quote.app.application.config;
 
 import insurance.quote.app.domain.exception.ValidationException;
 import org.springframework.http.HttpStatus;

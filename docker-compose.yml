@@ -21,20 +21,6 @@ services:
   #     - '9090:9090'
   #   environment:
   #     - SPRING_PROFILES_ACTIVE=dev
-    
-  mysql:
-    image: mysql:8.0
-    container_name: mysql-container
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: mydatabase
-      MYSQL_USER: user
-      MYSQL_PASSWORD: userpassword
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
 
   kafka:
     image: confluentinc/cp-kafka:7.4.0
@@ -62,5 +48,17 @@ services:
     ports:
       - "2181:2181"
 
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb-container
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodbdata:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
 volumes:
   mysql-data:
+  mongodbdata:

@@ -12,8 +12,8 @@ import lombok.Setter;
 @Entity
 public class CustomerEntity {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long id;
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private String id;
   private String documentNumber;
   private String name;
   private String type;

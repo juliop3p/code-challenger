@@ -4,12 +4,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
 @Getter
 @Setter
-public class QuoteRequestDto {
+public class QuoteResponseDto {
+    @JsonProperty("id")
+    private String id;
+
+    @JsonProperty("insurance_policy_id")
+    private String insurancePolicyId;
+
     @JsonProperty("product_id")
     private String productId;
 
@@ -18,6 +25,12 @@ public class QuoteRequestDto {
 
     @JsonProperty("category")
     private String category;
+
+    @JsonProperty("created_at")
+    private LocalDateTime createdAt;
+
+    @JsonProperty("updated_at")
+    private LocalDateTime updatedAt;
 
     @JsonProperty("total_monthly_premium_amount")
     private double totalMonthlyPremiumAmount;

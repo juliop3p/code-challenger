@@ -20,7 +20,7 @@ public class CatalogApiClientImpl implements GetCatalogProducts {
 
 
   @Override
-  public Product obtemProdutos(String id) {
+  public Product getProducts(String id) {
     String url = CATALOG_SERVICE_URL + "/products/" + id;
 
     try {
@@ -42,7 +42,7 @@ public class CatalogApiClientImpl implements GetCatalogProducts {
   }
 
   @Override
-  public Offer obtemOfertas(String id) {
+  public Offer getOffers(String id) {
     String url = CATALOG_SERVICE_URL + "/offers/" + id;
 
     try {

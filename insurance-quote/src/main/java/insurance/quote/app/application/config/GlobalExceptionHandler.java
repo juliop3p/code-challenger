@@ -13,17 +13,14 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handleGlobalException(Exception ex, WebRequest request) {
-        // Log the exception
         ex.printStackTrace();
 
-        // Return a custom error message
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("An unexpected error occurred: " + ex.getMessage());
     }
 
     @ExceptionHandler(ValidationException.class)
     public ResponseEntity<?> handleValidationException(ValidationException ex, WebRequest request) {
-        // Return a custom error message for validation errors
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body("Validation error: " + ex.getMessage());
     }

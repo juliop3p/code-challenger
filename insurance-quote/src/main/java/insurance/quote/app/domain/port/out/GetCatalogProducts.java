@@ -4,7 +4,6 @@ import insurance.quote.app.domain.entities.Offer;
 import insurance.quote.app.domain.entities.Product;
 
 public interface GetCatalogProducts {
-  Product obtemProdutos(String id);
-
-  Offer obtemOfertas(String id);
+  Product getProducts(String id);
+  Offer getOffers(String id);
 }

@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class CustomerDto {
+public class CustomerResponseDto {
 
     @JsonProperty("document_number")
     private String documentNumber;

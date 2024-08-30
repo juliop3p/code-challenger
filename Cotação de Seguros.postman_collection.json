@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "325b257e-4133-4da5-b9fd-41095a51c704",
+		"name": "Cotação de Seguros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33003809"
+	},
+	"item": [
+		{
+			"name": "Criar Cotação",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"product_id\": \"1b2da7cc-b367-4196-8a78-9cfeec21f587\",\r\n    \"offer_id\": \"adc56d77-348c-4bf0-908f-22d402ee715c\",\r\n    \"category\": \"HOME\",\r\n    \"total_monthly_premium_amount\": 75.25,\r\n    \"total_coverage_amount\": 825000.00,\r\n    \"coverages\": {\r\n        \"Incêndio\": 250000.00,\r\n        \"Desastres naturais\": 500000.00,\r\n        \"Responsabilidade civil\": 75000.00\r\n    },\r\n    \"assistances\": [\r\n        \"Encanador\",\r\n        \"Eletricista\",\r\n        \"Chaveiro 24h\"\r\n    ],\r\n    \"customer\": {\r\n        \"document_number\": \"36205578900\",\r\n        \"name\": \"John Wick\",\r\n        \"type\": \"NATURAL\",\r\n        \"gender\": \"MALE\",\r\n        \"date_of_birth\": \"1973-05-02\",\r\n        \"email\": \"johnwick@gmail.com\",\r\n        \"phone_number\": 11950503030\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/quotes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quotes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cotação",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/quotes/b8904974-aa41-4cf1-9b64-66239d8a894d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"quotes",
+						"b8904974-aa41-4cf1-9b64-66239d8a894d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

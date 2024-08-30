@@ -1,16 +1,18 @@
 package insurance.quote.app.application.consumer;
 
-import insurance.quote.app.domain.port.in.UpdatePolicyCotation;
+import insurance.quote.app.application.dto.PolicyCreatedConsumerDto;
+import insurance.quote.app.domain.port.in.UpdateQuotationPolicy;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
 
+@Service
 @RequiredArgsConstructor
 public class ConsumerInsurance {
 
-  private final UpdatePolicyCotation updatePolicyCotation;
-  @KafkaListener(topics = "insurance-topic")
-  public void consumer(Object message) {
-    System.out.println("Received message: " + message);
-    updatePolicyCotation.execute();
+  private final UpdateQuotationPolicy updateQuotationPolicy;
+  @KafkaListener(topics = "insurance-policy-created", groupId = "my-consumer-group")
+  public void consumer(PolicyCreatedConsumerDto policyCreatedConsumerDto) throws InterruptedException {
+    updateQuotationPolicy.execute(policyCreatedConsumerDto);
   }
 }

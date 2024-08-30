@@ -1,21 +1,20 @@
 package insurance.quote.app.infrastructure.model;
 
-import jakarta.persistence.*;
-
+import org.springframework.data.annotation.Id;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Getter
 @Setter
-@Entity
 @ToString
+@Document(collection = "quotes")
 public class QuoteEntity {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.UUID)
   private String id;
   private String insurancePolicyId;
   private String productId;
@@ -27,21 +26,22 @@ public class QuoteEntity {
   private LocalDateTime createdAt;
   private LocalDateTime updatedAt;
 
-  @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
   private List<CoverageEntity> coverages;
 
   private List<String> assistances;
 
-  @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
   private CustomerEntity customer;
 
-  @PrePersist
-  protected void onCreate() {
-    createdAt = LocalDateTime.now();
+  public QuoteEntity() {
+    this.createdAt = LocalDateTime.now();
+    this.updatedAt = LocalDateTime.now();
   }
 
-  @PreUpdate
-  protected void onUpdate() {
-    updatedAt = LocalDateTime.now();
+  public void prePersist() {
+    this.createdAt = LocalDateTime.now();
+  }
+
+  public void preUpdate() {
+    this.updatedAt = LocalDateTime.now();
   }
 }

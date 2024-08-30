@@ -27,7 +27,7 @@ public class MapQuote {
     quoteEntity.setUpdatedAt(quote.getUpdatedAt());
 
     List<CoverageEntity> listCoverageEntity = quote.getCoverages().stream()
-        .map(coverage -> new CoverageEntity(coverage.getName(),
+        .map(coverage -> new CoverageEntity(coverage.getId(), coverage.getName(),
             coverage.getAmount())).collect(Collectors.toList());
     quoteEntity.setCoverages(listCoverageEntity);
 

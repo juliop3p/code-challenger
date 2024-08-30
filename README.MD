@@ -53,7 +53,7 @@ Oferta Ativa: `http://localhost:1080/api/offers/edc56d77-348c-4bf0-908f-22d402ee
     <p>O projeto começou com a construção da infra base, seguindo a seguinte ordem:</p>
     <ul>
         <li>Serviço de catálogo com MockServer</li>
-        <li>Banco de Dados MySQL</li>
+        <li>Banco de Dados MongoDB</li>
         <li>Kafka</li>
     </ul>
 </details>

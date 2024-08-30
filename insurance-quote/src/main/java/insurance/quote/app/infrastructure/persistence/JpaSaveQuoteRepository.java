@@ -20,7 +20,7 @@ public class JpaSaveQuoteRepository implements SaveQuote {
   @Transactional
   public Quote execute(Quote quote) {
     QuoteEntity quoteEntity = MapQuote.mapQuoteToEntity(quote);
-    QuoteEntity entity = quoteRepository.save(quoteEntity);
+    QuoteEntity entity = quoteRepository.insert(quoteEntity);
     return MapQuote.mapEntityToQuote(entity);
   }
 }
